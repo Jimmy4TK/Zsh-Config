@@ -76,8 +76,12 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 bindkey -e
 bindkey '^[[Z' reverse-menu-complete
-bindkey '^[OB' history-beginning-search-forward
+# Flechas: buscan en el historial por el prefijo ya escrito.
+# Se bindean las dos secuencias: ^[[A (modo normal) y ^[OA (modo application).
+bindkey '^[[A' history-beginning-search-backward
+bindkey '^[[B' history-beginning-search-forward
 bindkey '^[OA' history-beginning-search-backward
+bindkey '^[OB' history-beginning-search-forward
 bindkey -s ^f "$HOME/.config/tmux/sessionizer.sh \r"
 
 # ======================================================================
