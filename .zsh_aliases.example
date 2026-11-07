@@ -1,0 +1,20 @@
+# Ejemplo de ~/.zsh_aliases. Copialo y adaptalo:
+#   cp ~/.config/zsh-config/.zsh_aliases.example ~/.zsh_aliases
+
+alias g='git'
+
+# Neovim en la carpeta actual
+command -v nvim >/dev/null && alias vim='nvim .'
+
+# ls con íconos (requiere eza y una Nerd Font)
+if command -v eza >/dev/null; then
+  alias ls='eza --icons=always --color=always -a'
+  alias ll='eza --icons=always --color=always -la'
+fi
+
+# cat con resaltado: en Arch el binario es bat, en Ubuntu batcat
+if command -v bat >/dev/null; then
+  alias cat='bat'
+elif command -v batcat >/dev/null; then
+  alias cat='batcat'
+fi
